@@ -11,11 +11,13 @@ def main():
 
 def part_1():
     data = open('input.txt', 'r').read().split('\n')
+    data = list(filter(lambda l: l != "", data))
     parsed = parse_part_1(data)
     solve_part_1(parsed)
 
 def part_2():
     data = open('input.txt', 'r').read().split('\n')
+    data = list(filter(lambda l: l != "", data))
     parsed = parse_part_2(data)
     solve_part_2(parsed)
 
