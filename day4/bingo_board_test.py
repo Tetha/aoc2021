@@ -1,5 +1,5 @@
 
-from bingo_board import BingoBoard
+from .bingo_board import BingoBoard
 
 
 def test_row_completed():

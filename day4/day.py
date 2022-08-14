@@ -2,7 +2,7 @@
 import sys
 from typing import Tuple
 
-from bingo_board import BingoBoard
+from .bingo_board import BingoBoard
 
 def main():
     if sys.argv[1] == "test":

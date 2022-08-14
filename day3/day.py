@@ -91,7 +91,7 @@ def solve_part_1(data) -> int:
 def parse_part_2(lines):
     return parse_part_1(lines)
 
-def do_bit_selection(data, use_most_common_bit, equal_bit) -> int:
+def do_bit_selection(data: list[str], use_most_common_bit, equal_bit) -> int:
     """
     >>> do_bit_selection([
     ...   "00100",
@@ -130,12 +130,12 @@ def do_bit_selection(data, use_most_common_bit, equal_bit) -> int:
     while len(work_data) > 1:
         most_common, was_equal = get_most_common_bit(work_data, i)
         if was_equal:
-            most_common = str(equal_bit)
+            most_common2 = str(equal_bit)
         elif use_most_common_bit:
-            most_common = str(most_common)
+            most_common2 = str(most_common)
         else:
-            most_common = str(1 - most_common)
-        work_data = [bs for bs in work_data if bs[i] == most_common]
+            most_common2 = str(1 - most_common)
+        work_data = [bs for bs in work_data if bs[i] == most_common2]
         i += 1
     
     return int(work_data[0], 2)

@@ -2,12 +2,20 @@
 import sys
 
 def main():
-    if sys.argv[1] == "part1":
+    if sys.argv[1] == "test":
+        test_part_1()
+    elif sys.argv[1] == "part1":
         part_1()
     elif sys.argv[1] == "part2":
         part_2()
     else:
         print("Arg required: part1/part2")
+
+def test_part_1():
+    data = open('test_input.txt', 'r').read().split('\n')
+    data = list(filter(lambda l: l != "", data))
+    parsed = parse_part_1(data)
+    solve_part_1(parsed)
 
 def part_1():
     data = open('input.txt', 'r').read().split('\n')

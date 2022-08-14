@@ -50,7 +50,7 @@ def part_2():
     parsed = parse_part_2(data)
     solve_part_2(parsed)
 
-def parse_move(line):
+def parse_move(line) -> Movement:
     move, amount = line.split(' ')
     amount = int(amount)
     return {
@@ -60,7 +60,7 @@ def parse_move(line):
     }[move]
 
 def parse_part_1(lines) -> list[Movement]:
-    return map(parse_move, filter(lambda l: l != "", lines))
+    return list(map(parse_move, filter(lambda l: l != "", lines)))
 
 def solve_part_1(moves: list[Movement]):
     position = Position()
